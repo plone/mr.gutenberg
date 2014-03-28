@@ -36,10 +36,6 @@ setup(
         # theme later
         # maybe some sphinx addons
     ],
-    entry_points="""
-        [zc.buildout]
-        default = bda.recipe.deployment.recipe:Recipe
-    """,
     entry_points="""\
        [zc.buildout]
        default = mr.gutenberg.recipe:Recipe
