@@ -31,7 +31,7 @@ class Recipe(object):
         """creates the initial structure for a addon documentation
         """
         # directory structure
-        sourcesdir = os.path.join(self.docsdir, 'sources')
+        sourcesdir = os.path.join(self.docsdir, 'source')
         if not os.path.exists(self.docsdir):
             os.mkdir(self.docsdir)
         if not os.path.exists(sourcesdir):
