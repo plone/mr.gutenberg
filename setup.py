@@ -33,6 +33,7 @@ setup(
         'zc.buildout',
         'zc.recipe.egg',
         'Sphinx',
+        'ipdb',
         # theme later
         # maybe some sphinx addons
     ],

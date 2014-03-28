@@ -35,17 +35,14 @@ class InfoTableDirective(BaseDirective):
 
         returns a list of nodes (in this case one node)
         """
-        dummy_value = {'foo', 'bar', 'willi', 'wonka'}
-        table = self._rest2node(tpl_package_info_table)
-        for key, value in dummy_value.items():
-            table.children[0].children[0].children[5].append(
-                self._make_row(key, value)
-            )
-        return [table]
+        dummy_value = {'foo': 'bar', 'willi': 'wonka'}
 
-    def _make_row(self, key, value):
         table = self._rest2node(tpl_package_info_table)
-        row = table.children[0].children[0].children[5].children[0]
-        row[0].children = [nodes.paragraph(text=key)]
-        row[1].children = [nodes.paragraph(text=value)]
-        return row
+        rows = table.children[0].children[0].children[3].children[0]
+        rows[0].children = []
+        rows[1].children = []
+
+        for key, value in dummy_value.items():
+            rows[0].append(nodes.paragraph(text=key))
+            rows[1].append(nodes.paragraph(text=value))
+        return [table]
