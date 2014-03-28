@@ -5,9 +5,10 @@ import re
 
 TPL_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 TPLS = [
-    ('conf.py', 'sources',),
-    ('index.rst', 'sources'),
-    ('Makefile', ''),
+    # filename, subpath, override
+    ('conf.py', 'source', True),
+    ('index.rst', 'source', False),
+    ('Makefile', '', True),
 ]
 
 
@@ -38,8 +39,10 @@ class Recipe(object):
             os.mkdir(sourcesdir)
 
         # templates kopieren (conf, rst)
-        for tplname, tplsubdir in TPLS:
+        for tplname, tplsubdir, override in TPLS:
             target = os.path.join(self.docsdir, tplsubdir, tplname)
+            if not override and os.path.exists(target):
+                continue
             with open(os.path.join(TPL_DIR, tplname)) as tpl_file:
                 tpl = tpl_file.read()
             tpl = self._render(tpl)
