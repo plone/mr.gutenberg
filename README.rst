@@ -24,8 +24,11 @@ our buildout.cfg.
 
 
     project = plone.app.welikedocs
+
     version = 0.1
+
     release = 0.1
+
     author = Sven
 
 **This is pretty much WIP and not fully working yet !!!**
