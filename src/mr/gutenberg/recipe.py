@@ -38,6 +38,10 @@ class Recipe(object):
         if not os.path.exists(sourcesdir):
             os.mkdir(sourcesdir)
 
+        sourceimagedir = os.path.join(self.docsdir, 'source','_images')
+        if not os.path.exists(sourceimagedir):
+            os.mkdir(sourceimagedir)
+
         # copy templates (conf, rst)
         for tplname, tplsubdir, override in TPLS:
             target = os.path.join(self.docsdir, tplsubdir, tplname)
