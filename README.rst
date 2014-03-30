@@ -22,7 +22,7 @@ Options:
 Till we fetch these from setup.py we will have to configure some options in
 our buildout.cfg.
 
-.. code::
+.. code:: python
     project = plone.app.welikedocs
     version = 0.1
     release = 0.1
