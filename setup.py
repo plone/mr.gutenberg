@@ -34,7 +34,7 @@ setup(
         'zc.recipe.egg',
         'Sphinx',
         'ipdb',
-        # theme later
+        'sphinx_rtd_theme',
         # maybe some sphinx addons
     ],
     entry_points="""\
