@@ -16,4 +16,16 @@ write documentation.
 mr.gutenberg will create an index.rst which will be filled with base data out of
 your setup.py (like the Author, Description and so on).
 
+Options:
+--------
+
+Till we fetch these from setup.py we will have to configure some options in
+our buildout.cfg.
+
+.. code:
+    project = plone.app.welikedocs
+    version = 0.1
+    release = 0.1
+    author = Sven
+
 **This is pretty much WIP and not fully working yet !!!**
