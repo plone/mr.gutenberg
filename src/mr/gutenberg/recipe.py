@@ -6,7 +6,7 @@ import re
 TPL_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 TPLS = [
     # filename, subpath, override
-    ('conf.py', 'source', True),
+    ('conf.py', '', True),
     ('index.rst', 'source', False),
     ('Makefile', '', True),
 ]
@@ -38,7 +38,7 @@ class Recipe(object):
         if not os.path.exists(sourcesdir):
             os.mkdir(sourcesdir)
 
-        # templates kopieren (conf, rst)
+        # copy templates (conf, rst)
         for tplname, tplsubdir, override in TPLS:
             target = os.path.join(self.docsdir, tplsubdir, tplname)
             if not override and os.path.exists(target):
@@ -49,7 +49,7 @@ class Recipe(object):
             with open(target, 'w') as target_file:
                 target_file.write(tpl)
 
-        # sphinx installieren
+        # install sphinx
         options = {'eggs': self.eggs + '\nSphinx'}
         scripts = Scripts(self.buildout, self.name, options)
         scripts.install()
