@@ -38,9 +38,15 @@ class Recipe(object):
         if not os.path.exists(sourcesdir):
             os.mkdir(sourcesdir)
 
+        # create directory 'source/_images'
         sourceimagedir = os.path.join(self.docsdir, 'source','_images')
         if not os.path.exists(sourceimagedir):
             os.mkdir(sourceimagedir)
+
+        # create directory '_static_'
+        sourcestaticdir = os.path.join(self.docsdir, 'source','_static')
+        if not os.path.exists(sourcestaticdir):
+            os.mkdir(sourcestaticdir)
 
         # copy templates (conf, rst)
         for tplname, tplsubdir, override in TPLS:
