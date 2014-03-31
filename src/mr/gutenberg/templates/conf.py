@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-#PACKAGE = '${:package}'
 
 #
 # TEST documentation build configuration file, created by
@@ -58,9 +57,7 @@ copyright = u'2014, ${:author}'
 # built documents.
 #
 # The short X.Y version.
-#version = '${:version}'
 # The full version, including alpha/beta/rc tags.
-#release = '${release}'
 release = pkg_resources.get_distribution('mr.gutenberg').version
 version = '.'.join(release.split('.')[:2])
 
