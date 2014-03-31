@@ -1,5 +1,7 @@
---------------------------------
-todo: write sphinx base template
---------------------------------
+--------------
+Documentation
+--------------
+
+.. include:: ../../README.rst
 
 .. docbase_pkginfo::
