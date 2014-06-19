@@ -8,7 +8,7 @@ TPLS = [
     # filename, subpath, override
     ('conf.py', '', True),
     ('index.rst', 'source', False),
-    ('documentation_styleguide_addons', 'source', False),
+    ('documentation_styleguide_addons.rst', 'source', False),
     ('Makefile', '', True),
 ]
 
