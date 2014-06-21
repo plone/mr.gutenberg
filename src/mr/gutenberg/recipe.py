@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from zc.recipe.egg import Scripts
+
 import os
+import pkg_resources
 import re
 
 TPL_DIR = os.path.join(os.path.dirname(__file__), 'templates')
@@ -10,6 +12,13 @@ TPLS = [
     ('index.rst', 'source', False),
     ('Makefile', '', True),
 ]
+METADATA = (
+    'Author',
+    'Author-email',
+    'Home-page',
+    'Summary',
+    'Version',
+)
 
 
 class Recipe(object):
@@ -78,3 +87,14 @@ class Recipe(object):
             tpl
         )
         return self.options._sub(template, [])
+
+    def get_package_metadata(self):
+        dist = pkg_resources.get_distribution(self.package)
+        lines = dist.get_metadata('PKG-INFO')
+        metadata = {}
+        for line in pkg_resources.yield_lines(lines):
+            key, value = line.split(':', 1)
+            key, value = key.strip(), value.strip()
+            if key in METADATA:
+                metadata[key.lower()] = value
+        return metadata
