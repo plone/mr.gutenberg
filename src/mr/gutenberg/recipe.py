@@ -39,12 +39,12 @@ class Recipe(object):
             os.mkdir(sourcesdir)
 
         # create directory 'source/_images'
-        sourceimagedir = os.path.join(self.docsdir, 'source','_images')
+        sourceimagedir = os.path.join(self.docsdir, 'source', '_images')
         if not os.path.exists(sourceimagedir):
             os.mkdir(sourceimagedir)
 
         # create directory '_static_'
-        sourcestaticdir = os.path.join(self.docsdir, 'source','_static')
+        sourcestaticdir = os.path.join(self.docsdir, 'source', '_static')
         if not os.path.exists(sourcestaticdir):
             os.mkdir(sourcestaticdir)
 
